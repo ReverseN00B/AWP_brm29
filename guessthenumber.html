@@ -83,6 +83,7 @@ guessCount++;
 guessField.value = '';
 guessField.focus(); 
 }
+guessSubmit.addEventListener('click', checkGuess);
 
 function setGameOver() { 
 guessField.disabled = true; 
@@ -94,7 +95,7 @@ resetButton.addEventListener('click', resetGame);
 }
 
 function resetGame() { 
-guessCount = 1;
+guessCount = 10;
 
 const resetParas = document.querySelectorAll('.resultParas p'); 
 for (let i = 0 ; i < resetParas.length ; i++) { 
@@ -113,7 +114,7 @@ lastResult.style.backgroundColor = 'white';
 randomNumber = Math.floor(Math.random() * 100) + 1; 
 }
 
-guessSubmit.addEventListener('click', checkGuess);
+
     </script>
   </body>
 </html>
