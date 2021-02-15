@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf 8">
+    <title>Hello World</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+
+    <div ng-controller="HelloWorldCtrl">
+
+        
+       <table border="1">
+           <tr>
+               <td>
+                   Name : {{person.name}}
+               </td>
+           </tr>
+           <tr>
+            <td>
+                Age : {{person.age}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mobile : {{person.mobile}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Emails
+            </td>
+        </tr>
+        <tr ng-repeat = "email in person.emails">
+            <td >
+                Description : {{email.discription}}
+                Email : {{email.email}}
+            </td>
+        </tr>
+       </table>
+    </div>
+  
+</body>
+<script>
+    var myApp = angular.module("myApp", []);
+
+myApp.controller("HelloWorldCtrl", function ($scope){
+    $scope.person = {
+        name : "Bhavik Mistry",age : "22",mobile : "9898989898",
+        emails : [
+            {discription:'official',email:'tf@gmail.com'},
+            {discription:'personal1',email:'tf1@gmail.com'},
+            {discription:'personal2',email:'tf2@gmail.com'}
+        ]
+    };
+});
+
+</script>
+</html>
